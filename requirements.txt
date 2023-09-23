@@ -1,0 +1,11 @@
+
+psycopg2-binary==2.9.7
+requests==2.31.0 # https://github.com/psf/requests
+
+
+django==4.2.5 # https://www.djangoproject.com/
+# django-environ==0.11.2# https://github.com/joke2k/django-environ
+djangorestframework==3.14.0  # https://github.com/encode/django-rest-framework
+djangorestframework-simplejwt==5.2.2 # https://github.com/jazzband/djangorestframework-simplejwt
+django-redis==5.2.0  # https://github.com/jazzband/django-redis
+
