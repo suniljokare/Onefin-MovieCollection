@@ -8,4 +8,4 @@ django==4.2.5 # https://www.djangoproject.com/
 djangorestframework==3.14.0  # https://github.com/encode/django-rest-framework
 djangorestframework-simplejwt==5.2.2 # https://github.com/jazzband/djangorestframework-simplejwt
 django-redis==5.2.0  # https://github.com/jazzband/django-redis
-
+factory-boy=3.3.0

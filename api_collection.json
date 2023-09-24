@@ -1,0 +1,230 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "MOVIE COLLECTIONS",
+    "dateExported": "2023-09-24T13:09:30.020Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "c65a8cdd-7a5d-48de-b724-ce784c93d340",
+            "name": "user management",
+            "containerId": "",
+            "created": "2023-09-23T04:20:15.692Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "1967a04b-504f-455c-aeb2-4dd1cd8a2e39",
+            "name": "3rd party api ",
+            "containerId": "",
+            "created": "2023-09-23T04:56:52.904Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "e2cacc33-9a21-4ad8-b1fe-c77c961e84b8",
+            "name": "colletion crud",
+            "containerId": "",
+            "created": "2023-09-23T17:10:47.124Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "696cf94c-ace3-4320-b4ea-d602874336f6",
+            "name": "request count(middleware)",
+            "containerId": "",
+            "created": "2023-09-23T17:13:06.142Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "f67241b6-5b81-408c-9444-3d791489e4ca",
+            "colId": "41463f8a-89fd-4ba3-8ac6-8c0335a6a1d2",
+            "containerId": "1967a04b-504f-455c-aeb2-4dd1cd8a2e39",
+            "name": "movies_list",
+            "url": "http://localhost:8000/movies/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-23T04:57:36.014Z",
+            "modified": "2023-09-23T21:13:59.998Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NTA3MjI3LCJpYXQiOjE2OTU1MDM2MjcsImp0aSI6IjVhM2I0ZDU0NjA3MTQxY2Q5MjBlNzVhYTY3MzJlNWU1IiwidXNlcl9pZCI6NX0.71kqaQ5jgCsk81uRWNRyDw7S79pvBFlsz5R4prC2k_I"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e0a15577-8b3d-4554-8f67-4792c9a5aa99",
+            "colId": "41463f8a-89fd-4ba3-8ac6-8c0335a6a1d2",
+            "containerId": "c65a8cdd-7a5d-48de-b724-ce784c93d340",
+            "name": "register",
+            "url": "http://localhost:8000/register/",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-09-23T17:09:29.890Z",
+            "modified": "2023-09-23T21:13:35.570Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n  \"username\":\"testraj\",\n  \"password\":\"User@1234\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "dce387fd-2eca-4f70-9ccb-ef8971b6d7ca",
+            "colId": "41463f8a-89fd-4ba3-8ac6-8c0335a6a1d2",
+            "containerId": "c65a8cdd-7a5d-48de-b724-ce784c93d340",
+            "name": "login",
+            "url": "http://localhost:8000/login/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-09-23T17:10:25.038Z",
+            "modified": "2023-09-23T21:18:52.462Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n  \"username\":\"dj\",\n  \"password\":\"dj\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "178bb88f-0251-48d1-a0f7-9831fbb57df2",
+            "colId": "41463f8a-89fd-4ba3-8ac6-8c0335a6a1d2",
+            "containerId": "e2cacc33-9a21-4ad8-b1fe-c77c961e84b8",
+            "name": "colletion-delete",
+            "url": "http://localhost:8000/collections/98fcfe3a-197c-4896-8acd-53f69429867e/",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-09-23T17:11:01.525Z",
+            "modified": "2023-09-23T17:11:01.525Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NDkyMjg4LCJpYXQiOjE2OTU0ODg2ODgsImp0aSI6IjdjMmMyZDgzNzdiYjRhNmZhMjM0NmIyMzM3NWIzZDFjIiwidXNlcl9pZCI6MX0.Da7qzZsY4Pf-RANG1zexu-4a-I2WG71EduBjaa57HDk"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e058510e-e823-42ba-a2c3-97038d7ae34b",
+            "colId": "41463f8a-89fd-4ba3-8ac6-8c0335a6a1d2",
+            "containerId": "e2cacc33-9a21-4ad8-b1fe-c77c961e84b8",
+            "name": "collection-get",
+            "url": "http://localhost:8000/collections/6cba1c85-19b2-4524-a32b-0aea673b49cf/",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-09-23T17:11:21.085Z",
+            "modified": "2023-09-23T21:19:35.797Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NTA3MjI3LCJpYXQiOjE2OTU1MDM2MjcsImp0aSI6IjVhM2I0ZDU0NjA3MTQxY2Q5MjBlNzVhYTY3MzJlNWU1IiwidXNlcl9pZCI6NX0.71kqaQ5jgCsk81uRWNRyDw7S79pvBFlsz5R4prC2k_I"
+            },
+            "tests": []
+        },
+        {
+            "_id": "465910e6-d0a4-4648-a16e-79266589a6f5",
+            "colId": "41463f8a-89fd-4ba3-8ac6-8c0335a6a1d2",
+            "containerId": "e2cacc33-9a21-4ad8-b1fe-c77c961e84b8",
+            "name": "collection-list",
+            "url": "http://localhost:8000/collections/",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-09-23T17:11:31.793Z",
+            "modified": "2023-09-24T12:46:45.510Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NTYxMTAyLCJpYXQiOjE2OTU1NTc1MDIsImp0aSI6ImM5NTUyNDczZTQxYjQ0OGFhZTAzMWM5ZTIxNGM0YTQ1IiwidXNlcl9pZCI6MX0.Uilik3OwbD__4kYZMA4iQLD4u-Ahviy1e7s96X3LWwU"
+            },
+            "tests": []
+        },
+        {
+            "_id": "696a7acd-1338-4a8b-b03c-720e65a76b4f",
+            "colId": "41463f8a-89fd-4ba3-8ac6-8c0335a6a1d2",
+            "containerId": "e2cacc33-9a21-4ad8-b1fe-c77c961e84b8",
+            "name": "collection-create  ",
+            "url": "http://localhost:8000/collections/",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-09-23T17:11:50.763Z",
+            "modified": "2023-09-23T21:29:35.176Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"title\": \"Title of the collectionW13\",\n    \"description\": \"All time  Favouirte-1\",\n    \"movies\": [\n    \n    {\n      \"title\": \"House of Horrors\",\n      \"description\": \"An unsuccessful sculptor saves a madman named \\\"The Creeper\\\" from drowning. Seeing an opportunity for revenge, he tricks the psycho into murdering his critics.\",\n      \"genres\": [\"Horror\",\"Mystery\",\"Thriller\"],\n      \"uuid\": \"388c99da-0cba-4ff0-a528-faea153b43c3\"\n    }\n    ]\n}\n\n ",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NTA3NTM0LCJpYXQiOjE2OTU1MDM5MzQsImp0aSI6IjE4OTg3ZmZmYjBjODQ1NDY4YmY1M2U4MDk0ZDc3ZDZmIiwidXNlcl9pZCI6MX0.U9XlmYHhAqddkwmfnTq_Okd5TiUbrGJ9h9h2lAqFnQY"
+            },
+            "tests": []
+        },
+        {
+            "_id": "2a940325-584d-4601-b2f1-b80f27f1fa0b",
+            "colId": "41463f8a-89fd-4ba3-8ac6-8c0335a6a1d2",
+            "containerId": "e2cacc33-9a21-4ad8-b1fe-c77c961e84b8",
+            "name": "collection-update  ",
+            "url": "http://localhost:8000/collections/ad6e6edf-b0a7-476c-a4d5-3245cb28bfac/",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2023-09-23T17:12:01.249Z",
+            "modified": "2023-09-23T21:21:32.123Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"title\": \"Title of the collectionY2\",\n    \"description\": \"All time  Favouirte mugs\",\n    \"movies\": [\n    \n     \n      \"6cba1c85-19b2-4524-a32b-0aea673b49cf\"\n\n    ]\n}\n\n ",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NTA3NTM0LCJpYXQiOjE2OTU1MDM5MzQsImp0aSI6IjE4OTg3ZmZmYjBjODQ1NDY4YmY1M2U4MDk0ZDc3ZDZmIiwidXNlcl9pZCI6MX0.U9XlmYHhAqddkwmfnTq_Okd5TiUbrGJ9h9h2lAqFnQY"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c86aa7ec-26eb-4a74-a333-66fbd42f4a56",
+            "colId": "41463f8a-89fd-4ba3-8ac6-8c0335a6a1d2",
+            "containerId": "696cf94c-ace3-4320-b4ea-d602874336f6",
+            "name": "request-count-rest",
+            "url": "http://localhost:8000/request-count/",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2023-09-23T18:32:25.192Z",
+            "modified": "2023-09-23T21:14:27.810Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NTA3MjI3LCJpYXQiOjE2OTU1MDM2MjcsImp0aSI6IjVhM2I0ZDU0NjA3MTQxY2Q5MjBlNzVhYTY3MzJlNWU1IiwidXNlcl9pZCI6NX0.71kqaQ5jgCsk81uRWNRyDw7S79pvBFlsz5R4prC2k_I"
+            },
+            "tests": []
+        },
+        {
+            "_id": "9cea2326-8612-4960-8605-5289bc28c81a",
+            "colId": "41463f8a-89fd-4ba3-8ac6-8c0335a6a1d2",
+            "containerId": "696cf94c-ace3-4320-b4ea-d602874336f6",
+            "name": "request-count-rest",
+            "url": "http://localhost:8000/request-count/reset/",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2023-09-23T18:32:35.790Z",
+            "modified": "2023-09-23T21:14:39.745Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NTA3MjI3LCJpYXQiOjE2OTU1MDM2MjcsImp0aSI6IjVhM2I0ZDU0NjA3MTQxY2Q5MjBlNzVhYTY3MzJlNWU1IiwidXNlcl9pZCI6NX0.71kqaQ5jgCsk81uRWNRyDw7S79pvBFlsz5R4prC2k_I"
+            },
+            "tests": []
+        }
+    ]
+}

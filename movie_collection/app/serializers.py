@@ -42,7 +42,7 @@ class GenreSerializer(serializers.ModelSerializer):
         fields = ['name']
 
 
-class MovieSerializer(serializers.ModelSerializer):
+class MovieSerializer(serializers.ModelSerializer): 
     # genres = GenreSerializer(many=True, read_only=True)
     genres = GenreSerializer(many=True)
     
@@ -121,7 +121,7 @@ class CreateCollectionSerializer(serializers.ModelSerializer):
 
                 genres_to_add.append(genre)
 
-            movie = Movie.objects.create(**movie_data)
+            movie, created = Movie.objects.get_or_create(**movie_data)
             movie.genres.set(genres_to_add)
 
             movies_to_create.append(movie)
