@@ -59,7 +59,7 @@ class Genre(BaseModel):
 class Movie(BaseModel):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    genres = models.ManyToManyField(Genre)
+    genres = models.ManyToManyField(Genre, blank=True)
     uuid = models.UUIDField()
 
 
@@ -81,7 +81,7 @@ class Collection(BaseModel):
     collection_ting = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     description = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    movies = models.ManyToManyField('Movie', related_name='collections')
+    movies = models.ManyToManyField('Movie', blank=True, related_name='collections')
     
     objects = models.Manager()  
     active_collections = CollectionManager() 
