@@ -108,37 +108,7 @@ class CollectionViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         return self.serializer_classes.get(self.action)
 
-    def user_collections(self, request):
-        try:
-            user = self.request.user
-            if user is None:
-                return Response({"error": "User not provided"}, status=status.HTTP_400_BAD_REQUEST)
-
-            # collections = Collection.objects.filter(user=user)
-            collections = self.get_queryset(user=user)
-
-            serialized_collections = []
-            for collection in collections:
-                serialized_data = self.get_serializer_class()(collection).data
-                serialized_collections.append(serialized_data)
-
-            # Get the top 3 favorite genres based on the movies in the collections
-            favorite_genres = self.get_favorite_genres(collections)
-
-            response_data = {
-                "is_success": True,
-                "data": {
-                    "collections": serialized_collections,
-                    "favourite_genres": favorite_genres
-                }
-            }
-
-            return Response(response_data)
-        except User.DoesNotExist:
-            return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
-        except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    
+  
 
     def get_favorite_genres(self, collections):
         genre_count = {}
@@ -156,6 +126,33 @@ class CollectionViewSet(viewsets.ModelViewSet):
         favorite_genres = ', '.join([genre for genre, count in sorted_genres[:3]])
 
         return favorite_genres
+    
+
+    def user_collections(self, request):
+        try:
+            user = self.request.user
+            if user is None:
+                return Response({"error": "User not provided"}, status=status.HTTP_400_BAD_REQUEST)
+
+            collections = Collection.objects.filter(user=user)
+            
+            serializer = CollectionListSerializer(collections, many=True)
+            favorite_genres = self.get_favorite_genres(collections)
+
+            response_data = {
+                "is_success": True,
+                "data": {
+                    "collections": serializer.data,
+                    "favourite_genres": favorite_genres 
+                }
+            }
+
+            return Response(response_data)
+        except User.DoesNotExist:
+            return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
 
     def retrieve(self, request, collection_uuid=None):
@@ -211,37 +208,7 @@ class CollectionViewSet(viewsets.ModelViewSet):
             return Response({"error": "Collection not found"}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
-
-      # def user_collections(self, request):
-    #     try:
-    #         user = self.request.user
-    #         if user is None:
-    #             return Response({"error": "User not provided"}, status=status.HTTP_400_BAD_REQUEST)
-
-    #         collections = Collection.objects.filter(user=user)
-            
-    #         serializer = CollectionListSerializer(data=collections, many=True)
-    #         favorite_genres = self.get_favorite_genres(collections)
-
-    #         if not serializer.is_valid(): 
-    #             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    #         response_data = {
-    #             "is_success": True,
-    #             "data": {
-    #                 "collections": serializer.data,
-    #                 "favourite_genres": favorite_genres 
-    #             }
-    #         }
-
-    #         return Response(response_data)
-    #     except User.DoesNotExist:
-    #         return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
-    #     except Exception as e:
-    #         return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-        
+                
 
 class RequestCountView(APIView):
     def get(self, request):

@@ -165,9 +165,8 @@ class CollectionUpdateSerializer(serializers.ModelSerializer):
 
 
 class CollectionListSerializer(serializers.ModelSerializer):
-    user = UserRegistrationSerializer() 
 
     class Meta:
         model = Collection
-        fields = ('title', 'collection_ting', 'description','user')
+        fields = ('title', 'collection_ting', 'description')
 
